@@ -1,0 +1,38 @@
+[
+    {
+        "Nombre": "Andres",
+        "Apellido": "Demcak",
+        "Ruta":"NodeJs",
+        "Horario":"Mañana"
+      },
+      {
+        "Nombre": "Pedro",
+        "Apellido": "Demcak",
+        "Ruta": "Java",
+        "Horario":"Mañana"
+      },
+      {
+        "Nombre": "Carlos",
+        "Apellido": "Demcak",
+        "Ruta": "NetCore",
+        "Horario":"Mañana"
+      },
+      {
+        "Nombre": "Felipe",
+        "Apellido": "Demcak",
+        "Ruta":"NodeJs",
+        "Horario":"Tarde"
+      },
+      {
+        "Nombre": "Pepe",
+        "Apellido": "Demcak",
+        "Ruta": "Java",
+        "Horario":"Tarde"
+      },
+      {
+        "Nombre": "Filmer",
+        "Apellido": "Demcak",
+        "Ruta": "NetCore",
+        "Horario":"Tarde"
+      }
+]

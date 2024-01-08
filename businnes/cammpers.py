@@ -38,7 +38,8 @@ def crear_camper():
     Direccion = input("Ingrese la direccion del camper: ")
     Telefono = input("Ingrese el número de teléfono del camper: ")
     Acudiente = input("Ingrese nombre del acudiente del camper: ")
-    Nota = int(0)
+    NotaP = int(0)
+    NotaT = int(0)
     camper = {
         'Nombre':Nombre,
         'Apellido': Apellido,
@@ -46,7 +47,8 @@ def crear_camper():
         'Direccion': Direccion,
         'Telefono': Telefono,
         'Acudiente': Acudiente,
-        'Nota': Nota
+        'NotaP': NotaP,
+        'NotaT': NotaT
     }
 
     lista_campers.append(camper)
