@@ -272,7 +272,6 @@ def camp_ruta3():
                 if all(entry.get('Nombre') is not None and entry.get('Apellido') is not None and
                     entry.get('Profesor') is not None and entry.get('Ruta') is not None and
                     entry.get('NotaT') is not None and entry.get('NotaP') is not None for entry in data):
-
                     campers_nodejs = [(entry['Nombre'], entry['Apellido'], entry['NotaT'], entry['NotaP']) for entry in data if entry['Ruta'] == 'NetCore']
 
                     for Nombre, Apellido, NotaT, NotaP in campers_nodejs:
@@ -282,7 +281,6 @@ def camp_ruta3():
                         estado = "Aprobado" if nota_final > 60 else "En Riesgo"
 
                         print(f"Nombre: {Nombre}, Apellido: {Apellido}, Nota Final: {nota_final:.2f}, Estado: {estado}")
-
                 else:
                     print("El archivo JSON no tiene la estructura esperada (Nombre, Apellido, Profesor, Ruta, NotaT, NotaP).")
         except FileNotFoundError:

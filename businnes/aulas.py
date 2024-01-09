@@ -13,7 +13,6 @@ def guardarAulas_json():
         print("Error al decodificar el archivo JSON . El formato podría ser incorrecto.")
     except Exception as e:
         print("Error desconocido:")
-
 def cargarAulas_json():
     try:
         with open(os.path.join("data","Aulas.json"), 'r') as archivo_json:        
@@ -27,8 +26,6 @@ def cargarAulas_json():
      print(f"Error al cargar el archivo: {e}")
     return []
 lista_aulas = cargarAulas_json()
-    
-
 def crearAulas():
     print("Seleccione el aula que desea revisar.")
     AulaNombre = input("Ingrese el nombre del Aula (Grupo): ")

@@ -3,6 +3,7 @@ from commons.menus import menu_principal,menu_trainers,menu_campers,menu_matricu
 from businnes.cammpers import crear_camper,listar_campers,load_campers_json,lista_campers
 from businnes.reportes import *
 from businnes.aulas import *
+from businnes.matriculas import *
 
 def campers():      
     limpiar_pantalla()
@@ -19,6 +20,14 @@ def trainers():
 def matriculas():
     limpiar_pantalla()    
     op=menu_matriculas()
+    if op == 1:
+        crearmatricula()
+        input("Clic cualquier teclas [continuar]: ")
+    if op == 2:
+        buscarMatricula()
+        input("Clic cualquier teclas [continuar]: ")
+    if op == 3:
+        modificarMatricula()
 def aulas():
     limpiar_pantalla()    
     op=menu_aulas()
