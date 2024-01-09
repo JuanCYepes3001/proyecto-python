@@ -68,3 +68,28 @@ def menu_rutas():
     print("4. Salir")
     op=validar_opcion("Opcion: ",1,4)
     return op
+
+def mod_matricula():
+    print("-----------Modificar matriculas-----------")
+    print("1. Direccion")
+    print("2. Telefono")
+    print("3. Acudiente")
+    print("4. Ruta")
+    print("5. Horario")
+    print("6. Profesor")
+    print("7. Salon")
+    print("8. Modulo")
+    print("9. Salir")
+    op=validar_opcion("Opcion: ",1,9)
+    return op
+
+def mod_camper():
+    print("-----------Modificar camper-----------")
+    print("1. Direccion")
+    print("2. Telefono")
+    print("3. Acudiente")
+    print("4. Nota practica")
+    print("5. Nota teorica")
+    print("6. Salir")
+    op=validar_opcion("Opcion: ",1,6)
+    return op

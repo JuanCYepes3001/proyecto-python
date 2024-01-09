@@ -1,6 +1,6 @@
 import json
 import os
-
+from commons.menus import mod_camper
 def guardar_json():
     try:
       with open(os.path.join("proyecto-python","data","Ingresos.json"), 'w') as archivo_json:
@@ -55,6 +55,48 @@ def crear_camper():
     print("Se creó el camper con éxito")
     guardar_json()
 
+def modificar_campers():
+    if not lista_campers:
+        print("No hay campers registrados.")
+        return
 
+    nombre_camper = input("Ingrese la identificacion del camper que desea modificar: ")
+
+    for campers in lista_campers:
+        if campers['Identificacion'] == nombre_camper:
+            print(f"Datos actuales del campers con identificacion {nombre_camper}:")
+            print(campers)
+            op = mod_camper()
+
+            if op == 1:
+                nuevo_valor = input("Direccion: ")
+                if nuevo_valor:
+                    campers['Direccion'] = nuevo_valor
+            elif op == 2:
+                nuevo_valor = input("Telefono: ")
+                if nuevo_valor:
+                    campers['Telefono'] = nuevo_valor
+            elif op == 3:
+                nuevo_valor = input("Acudiente: ")
+                if nuevo_valor:
+                    campers['Acudiente'] = nuevo_valor
+            elif op == 4:
+                nuevo_valor = int(input("Nota practica: "))
+                if nuevo_valor:
+                    campers['NotaP'] = nuevo_valor
+            elif op == 5:
+                nuevo_valor = int(input("Nota teorica: "))
+                if nuevo_valor:
+                    campers['NotaT'] = nuevo_valor
+            else:
+                print("Opción no válida. No se realizaron modificaciones.")
+                return
+
+            print("Camper modificado con éxito.")
+      
+            guardar_json()
+            return
+
+    print(f"No se encontró un campers con el nombre {nombre_camper}.")
 
 

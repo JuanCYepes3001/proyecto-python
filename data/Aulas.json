@@ -1,16 +1,16 @@
 [
-    {
-      "Nombre": "A1",
-      "Ruta": "NoteJS",
-      "Modulo": "Fundamentos",
-      "Aula": "Sputnik",
-      "Trainer": "Camilo"
-    },
-    {
-      "Nombre": "A3",
-      "Ruta": "Java",
-      "Modulo": "Python",
-      "Aula": "Apolo",
-      "Trainer": "Camilo"
-    }
-  ]
+  {
+    "Nombre": "A1",
+    "Ruta": "NoteJS",
+    "Modulo": "Fundamentos",
+    "Aula": "Sputnik",
+    "Trainer": "Camilo"
+  },
+  {
+    "Nombre": "A3",
+    "Ruta": "NodeJS",
+    "Modulo": "Python",
+    "Aula": "Apolo",
+    "Trainer": "Camilo"
+  }
+]

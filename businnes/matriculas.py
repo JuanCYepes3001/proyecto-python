@@ -1,6 +1,7 @@
 import json
 import os
 from commons.utils import *
+from commons.menus import mod_matricula
 
 def guardarMatricula_json():
     try:
@@ -59,11 +60,65 @@ def crearmatricula():
     }
 
     lista_matriculas.append(camper)
-    print("Se creó el aula con éxito")
+    print("Se creó la matricula con éxito")
     guardarMatricula_json()
 
 def modificarMatricula():
-    pass
+    if not lista_matriculas:
+        print("No hay Matriculass registrados.")
+        return
+
+    id_Matriculas = input("Ingrese el numero de identificacion de la matricula que desea modificar: ")
+
+    for Matriculas in lista_matriculas:
+        if Matriculas['Identificacion'] == id_Matriculas:
+            print(f"Datos actuales del Matriculas {id_Matriculas}:")
+            print(Matriculas)
+            op = mod_matricula()
+            if op== 1:
+                nuevo_valor = input("Nueva direccion: ")
+                if nuevo_valor:
+                    Matriculas['Direccion'] = nuevo_valor
+            elif op== 2:
+                nuevo_valor = input("Nuevo Telefono: ")
+                if nuevo_valor:
+                    Matriculas['Telefono'] = nuevo_valor
+            elif op== 3:
+                nuevo_valor = input("Nuevo Acudiente: ")
+                if nuevo_valor:
+                    Matriculas['Acudiente'] = nuevo_valor
+            elif op== 4:
+                nuevo_valor = input("Nuevo Ruta: ")
+                if nuevo_valor:
+                    Matriculas['Ruta'] = nuevo_valor
+            elif op== 5:
+                nuevo_valor = input("Nuevo Horario: ")
+                if nuevo_valor:
+                    Matriculas['Horario'] = nuevo_valor
+            elif op== 6:
+                nuevo_valor = input("Nuevo Profesor: ")
+                if nuevo_valor:
+                    Matriculas['Profesor'] = nuevo_valor
+            elif op== 7:
+                nuevo_valor = input("Nuevo Salon: ")
+                if nuevo_valor:
+                    Matriculas['Salon'] = nuevo_valor
+            elif op== 8:
+                nuevo_valor = input("Nuevo Modulo: ")
+                if nuevo_valor:
+                    Matriculas['Modulo'] = nuevo_valor
+            else:
+                print("Opción no válida. No se realizaron modificaciones.")
+                return
+
+            print("Matriculas modificado con éxito.")
+      
+            guardarMatricula_json()
+            return
+
+    print(f"No se encontró un Matriculas con la identificacion {id_Matriculas}.")
+
+
     
 
 def buscarMatricula():

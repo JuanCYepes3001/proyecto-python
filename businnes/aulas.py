@@ -4,7 +4,7 @@ from commons.utils import *
 
 def guardarAulas_json():
     try:
-      with open(os.path.join("data","Aulas.json"), 'w') as archivo_json:
+      with open(os.path.join("proyecto-python","data","Aulas.json"), 'w') as archivo_json:
         json.dump(lista_aulas, archivo_json, indent=2)
         print("La lista de Aulas ha sido guardada")
     except FileNotFoundError:
@@ -15,7 +15,7 @@ def guardarAulas_json():
         print("Error desconocido:")
 def cargarAulas_json():
     try:
-        with open(os.path.join("data","Aulas.json"), 'r') as archivo_json:        
+        with open(os.path.join("proyecto-python","data","Aulas.json"), 'r') as archivo_json:        
             lista_aulas = json.load(archivo_json)
             print("La lista de Aulas ha sido cargada")
             return lista_aulas
@@ -46,7 +46,36 @@ def crearAulas():
     guardarAulas_json()
 
 def modificarAulas():
-    pass
+    if not lista_aulas:
+        print("No hay Aulas registrados.")
+        return
+
+    nombre_aula = input("Ingrese el nombre del Aula que desea modificar: ")
+
+    for aula in lista_aulas:
+        if aula['Aula'] == nombre_aula:
+            print(f"Datos actuales del trainer {nombre_aula}:")
+            print(aula)
+            dato_a_modificar = input("¿Qué dato desea modificar? (modulo/ruta): ").lower()
+
+            if dato_a_modificar == "modulo":
+                nuevo_valor = input("Nuevo modulo: ")
+                if nuevo_valor:
+                    aula['Modulo'] = nuevo_valor
+            elif dato_a_modificar == "ruta":
+                nuevo_valor = input("Nueva ruta : ")
+                if nuevo_valor:
+                    aula['Ruta'] = nuevo_valor
+            else:
+                print("Opción no válida. No se realizaron modificaciones.")
+                return
+
+            print("Aula modificada con éxito.")
+      
+            guardarAulas_json()
+            return
+
+    print(f"No se encontró un trainer con el nombre {nombre_aula}.")
     
 
 def buscarAulas():

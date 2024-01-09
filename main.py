@@ -1,10 +1,10 @@
 from commons.utils import limpiar_pantalla
 from commons.menus import menu_principal,menu_trainers,menu_campers,menu_matriculas,menu_aulas,menu_reportes
-from businnes.cammpers import crear_camper,listar_campers,load_campers_json,lista_campers
+from businnes.cammpers import *
 from businnes.reportes import *
 from businnes.aulas import *
 from businnes.matriculas import *
-
+from businnes.trainers import *
 def campers():      
     limpiar_pantalla()
     op=menu_campers()
@@ -14,9 +14,21 @@ def campers():
     if op==2:
        listar_campers()
        input("Clic cualquier teclas [continuar]: ")
+    if op==3:
+       modificar_campers()
+       input("Clic cualquier teclas [continuar]: ")
 def trainers():
     limpiar_pantalla()    
     op=menu_trainers()
+    if op == 1:
+        crearTrainer()
+        input("Clic cualquier teclas [continuar]: ")
+    if op == 2:
+        buscarTrainer()
+        input("Clic cualquier teclas [continuar]: ")
+    if op == 3:
+        modificarTrainer()
+        input("Clic cualquier teclas [continuar]: ")
 def matriculas():
     limpiar_pantalla()    
     op=menu_matriculas()
@@ -28,6 +40,7 @@ def matriculas():
         input("Clic cualquier teclas [continuar]: ")
     if op == 3:
         modificarMatricula()
+        input("Clic cualquier teclas [continuar]: ")
 def aulas():
     limpiar_pantalla()    
     op=menu_aulas()
@@ -39,6 +52,7 @@ def aulas():
         input("Clic cualquier teclas [continuar]: ")
     if op == 3:
         modificarAulas()
+        input("Clic cualquier teclas [continuar]: ")
 def reportes():
     limpiar_pantalla()    
     op=menu_reportes()
