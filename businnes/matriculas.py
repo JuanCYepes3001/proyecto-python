@@ -67,7 +67,7 @@ def modificarMatricula():
     
 
 def buscarMatricula():
-    def buscar_por_aula(json_path, palabra_ingresada):
+    def buscar_por_id(json_path, palabra_ingresada):
         try:
             with open(json_path, 'r') as archivo_json:
                 data = json.load(archivo_json)
@@ -100,4 +100,4 @@ def buscarMatricula():
     palabra_ingresada = input("Ingrese el numero de identificacion del camper: ")
 
 
-    buscar_por_aula(json_path, palabra_ingresada)
+    buscar_por_id(json_path, palabra_ingresada)
