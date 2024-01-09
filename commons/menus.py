@@ -1,5 +1,5 @@
-from commons.utils import validar_opcion
 
+from commons.utils import validar_opcion
 def menu_principal():
     print("----------- Menú Principal-----------")
     print("1. Campers")
@@ -50,7 +50,7 @@ def menu_aulas():
 
 def menu_reportes():
     print("----------- Menú Reportes-----------")
-    print("1. Listar campers estado inscripto")
+    print("1. Listar campers estado inscrito")
     print("2. Listar campers aprobaron examen")
     print("3. Listar trainers trabajando en campus")
     print("4. Listar campers con bajo rendimiento")
@@ -58,4 +58,13 @@ def menu_reportes():
     print("6. Listar campers aprobados y reprobados por ruta")
     print("7. Salir")
     op=validar_opcion("Opcion: ",1,7)
+    return op
+
+def menu_rutas():
+    print("----------- Menú Rutas-----------")
+    print("1. Ruta NodeJS")
+    print("2. Ruta Java")
+    print("3. Ruta NetCore")
+    print("4. Salir")
+    op=validar_opcion("Opcion: ",1,4)
     return op
